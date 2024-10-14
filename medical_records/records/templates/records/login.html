@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.cdnfonts.com/css/poppins" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'records/css/style_new1.css' %}">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url("{% static 'records/img/a2.jpg' %}");
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="navigation">
+            <input type="checkbox" id="check">
+            <label for="check" class="check_btn">
+                <i class="fas fa-bars"></i>
+            </label>
+            <label class="logo">ELECTRONIC MARKETING</label>
+            <ul>
+                <li><a href="{% url 'record_list' %}">السجلات الطبية</a></li>
+                <li><a href="{% url 'add_record' %}">إضافة سجل</a></li>
+                <li><a href="{% url 'edit_record' record_id=2 %}">تعديل سجل</a></li>
+                <li><a href="{% url 'user_profile' %}">المستخدمين</a></li>
+                <li><button class="btnLogin-popup">Login</button></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="cover_box">
+        <span class="icon-close"><ion-icon name="close-outline"></ion-icon></span>
+
+        <div class="form-box login">
+            <h2>تسجيل الدخول</h2>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                    <input type="email" name="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                    <input type="password" name="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">تذكرني</label>
+                    <a href="#">نسيت كلمة المرور؟</a>
+                </div>
+                <button type="submit" class="btn">تسجيل الدخول</button>
+                <div class="login-register">
+                    <p>لا تملك حسابًا؟ <a href="{% url 'register' %}" class="register-link">تسجيل</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="{% static 'records/js/script_logo1.js' %}"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

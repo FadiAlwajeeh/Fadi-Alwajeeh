@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}تعديل سجل طبي{% endblock %}
+
+{% block content %}
+    <h1>تعديل سجل طبي</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <th>المجال</th>
+                <th>القيمة</th>
+            </tr>
+            <tr>
+                <td><label for="patient_name">اسم المريض:</label></td>
+                <td><input type="text" name="patient_name" value="{{ record.patient_name }}" required></td>
+            </tr>
+            <tr>
+                <td><label for="id_number">رقم الهوية:</label></td>
+                <td><input type="text" name="id_number" value="{{ record.id_number }}" required></td>
+            </tr>
+            <tr>
+                <td><label for="date_of_birth">تاريخ الميلاد:</label></td>
+                <td><input type="date" name="date_of_birth" value="{{ record.date_of_birth }}" required></td>
+            </tr>
+            <tr>
+                <td><label for="age">العمر:</label></td>
+                <td><input type="number" name="age" value="{{ record.age }}" required></td>
+            </tr>
+            <tr>
+                <td><label for="residence">محل الإقامة:</label></td>
+                <td><input type="text" name="residence" value="{{ record.residence }}" required></td>
+            </tr>
+            <tr>
+                <td><label for="phone_number">رقم الهاتف:</label></td>
+                <td><input type="tel" name="phone_number" value="{{ record.phone_number }}" required></td>
+            </tr>
+            <tr>
+                <td><label for="visit_date">تاريخ الزيارة:</label></td>
+                <td><input type="date" name="visit_date" value="{{ record.visit_date }}" required></td>
+            </tr>
+            <tr>
+                <td><label for="specialist">الطبيب المختص:</label></td>
+                <td><input type="text" name="specialist" value="{{ record.specialist }}" required></td>
+            </tr>
+            <tr>
+                <td><label for="doctor_number">رقم الطبيب:</label></td>
+                <td><input type="text" name="doctor_number" value="{{ record.doctor_number }}" required></td>
+            </tr>
+            <tr>
+                <td><label for="medical_diagnosis">التشخيص الطبي:</label></td>
+                <td><textarea name="medical_diagnosis" required>{{ record.medical_diagnosis }}</textarea></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <button type="submit">تحديث السجل</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <a href="{% url 'record_list' %}">عودة إلى قائمة السجلات</a>
+{% endblock %}

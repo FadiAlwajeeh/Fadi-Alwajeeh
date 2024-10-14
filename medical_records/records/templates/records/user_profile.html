@@ -1,0 +1,45 @@
+<!-- records/templates/records/user_profile.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إدارة المستخدمين</title>
+    <link rel="stylesheet" href="{% static 'records/css/style1.css' %}">
+</head>
+<body>
+    <h1>إدارة المستخدمين</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>اسم المستخدم</th>
+                <th>رقم الهاتف</th>
+                <th>العنوان</th>
+                <th>تاريخ الميلاد</th>
+                <th>التاريخ الطبي</th>
+                <th>إجراءات</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for profile in profiles %}
+            <tr>
+                <td>{{ profile.user.username }}</td>
+                <td>{{ profile.phone_number }}</td>
+                <td>{{ profile.address }}</td>
+                <td>{{ profile.date_of_birth }}</td>
+                <td>{{ profile.medical_history }}</td>
+                <td>
+                    <a href="{% url 'edit_profile' profile.user.id %}">تعديل</a>
+                    <form action="{% url 'user_profile' %}" method="POST" style="display:inline;">
+                        {% csrf_token %}
+                        <input type="hidden" name="action" value="delete">
+                        <button type="submit">حذف</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

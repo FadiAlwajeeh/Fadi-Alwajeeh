@@ -1,0 +1,107 @@
+<!-- register.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.cdnfonts.com/css/poppins" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'records/css/style_new1.css' %}">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url("{% static 'records/img/a2.jpg' %}");
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="navigation">
+            <input type="checkbox" id="check">
+            <label for="check" class="check_btn">
+                <i class="fas fa-bars"></i>
+            </label>
+            <label class="logo">ELECTRONIC MARKETING</label>
+            <ul>
+                <li><a href="{% url 'record_list' %}">السجلات الطبية</a></li>
+                <li><a href="{% url 'add_record' %}">إضافة سجل</a></li>
+                <li><a href="{% url 'user_profile' %}">المستخدمين</a></li>
+                <li><button class="btnLogin-popup">Login</button></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="cover_box">
+        <div class="form-box register">
+            <h2>تسجيل</h2>
+            <form method="POST">
+                {% csrf_token %}
+                
+                {% if form.errors %}
+                    <div class="error-messages">
+                        <ul>
+                            {% for field in form %}
+                                {% for error in field.errors %}
+                                    <li>{{ error }}</li>
+                                {% endfor %}
+                            {% endfor %}
+                            {% for error in form.non_field_errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+            
+                <div class="input-box">
+                    <label for="{{ form.username.id_for_label }}">اسم المستخدم:</label>
+                    {{ form.username }}
+                    {% for error in form.username.errors %}
+                        <div class="error">{{ error }}</div>
+                    {% endfor %}
+                </div>
+            
+                <div class="input-box">
+                    <label for="{{ form.email.id_for_label }}">البريد الإلكتروني:</label>
+                    {{ form.email }}
+                    {% for error in form.email.errors %}
+                        <div class="error">{{ error }}</div>
+                    {% endfor %}
+                </div>
+                <div class="input-box">
+                    <label for="{{ form.password1.id_for_label }}">كلمة المرور:</label>
+                    {{ form.password1 }}
+                    {% for error in form.password1.errors %}
+                        <div class="error">{{ error }}</div>
+                    {% endfor %}
+                </div>
+            
+                {% comment %} <div class="input-box">
+                    <label for="{{ form.password2.id_for_label }}">تأكيد كلمة المرور:</label>
+                    {{ form.password2 }}
+                    {% for error in form.password2.errors %}
+                        <div class="error">{{ error }}</div>
+                    {% endfor %}
+                </div> {% endcomment %}
+            
+                <button type="submit" class="btn">تسجيل</button>
+                
+                <div class="login-register">
+                    <p>هل لديك حساب بالفعل؟ <a href="{% url 'login' %}" class="login-link">تسجيل الدخول</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="{% static 'records/js/script_logo1.js' %}"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

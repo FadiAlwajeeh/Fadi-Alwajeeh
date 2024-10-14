@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}قائمة السجلات الطبية{% endblock %}
+
+{% block content %}
+    <!-- عرض الرسائل -->
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li style="color: green;">{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <!-- نموذج لإضافة سجل جديد -->
+    <h2 style="text-align: center;">إضافة سجل طبي</h2>
+    <form method="POST" action="{% url 'add_record' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn" style="text-align: center; font-size: 30px justify-content: center;;">إضافة السجل</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>اسم المريض</th>
+                <th>رقم الهوية</th>
+                <th>تاريخ الميلاد</th>
+                <th>العمر</th>
+                <th>محل الإقامة</th>
+                <th>رقم الهاتف</th>
+                <th>تاريخ الزيارة</th>
+                <th>الطبيب المختص</th>
+                <th>رقم الطبيب</th>
+                <th>التشخيص الطبي</th>
+                <th>الإجراءات</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if records %}
+                {% for record in records %}
+                    <tr>
+                        <td>{{ record.patient_name }}</td>
+                        <td>{{ record.id_number }}</td>
+                        <td>{{ record.date_of_birth }}</td>
+                        <td>{{ record.age }}</td>
+                        <td>{{ record.residence }}</td>
+                        <td>{{ record.phone_number }}</td>
+                        <td>{{ record.visit_date }}</td>
+                        <td>{{ record.specialist }}</td>
+                        <td>{{ record.doctor_number }}</td>
+                        <td>{{ record.medical_diagnosis }}</td>
+                        <td>
+                            <a href="{% url 'edit_record' record.id %}">تعديل</a>
+                            <form action="{% url 'delete_record' record.id %}" method="POST" style="display:inline;">
+                                {% csrf_token %}
+                                <button type="submit" style="color: red; background: none; border: none; cursor: pointer;">حذف</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="11" style="text-align: center;">لا توجد سجلات لعرضها.</td>
+                </tr>
+            {% endif %}
+        </tbody>
+    </table>
+{% endblock %}

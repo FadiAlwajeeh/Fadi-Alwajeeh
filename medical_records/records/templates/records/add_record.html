@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}إضافة سجل طبي{% endblock %}
+
+{% block content %}
+    <h1>إضافة سجل طبي</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <th>المجال</th>
+                <th>القيمة</th>
+            </tr>
+            <tr>
+                <td><label for="{{ form.patient_name.id_for_label }}">اسم المريض:</label></td>
+                <td>{{ form.patient_name }}</td>
+                {% if form.patient_name.errors %}
+                    <tr>
+                        <td colspan="2" style="color: red;">{{ form.patient_name.errors }}</td>
+                    </tr>
+                {% endif %}
+            </tr>
+            <tr>
+                <td><label for="{{ form.id_number.id_for_label }}">رقم الهوية:</label></td>
+                <td>{{ form.id_number }}</td>
+                {% if form.id_number.errors %}
+                    <tr>
+                        <td colspan="2" style="color: red;">{{ form.id_number.errors }}</td>
+                    </tr>
+                {% endif %}
+            </tr>
+            <tr>
+                <td><label for="{{ form.date_of_birth.id_for_label }}">تاريخ الميلاد:</label></td>
+                <td>{{ form.date_of_birth }}</td>
+                {% if form.date_of_birth.errors %}
+                    <tr>
+                        <td colspan="2" style="color: red;">{{ form.date_of_birth.errors }}</td>
+                    </tr>
+                {% endif %}
+            </tr>
+            <tr>
+                <td><label for="{{ form.age.id_for_label }}">العمر:</label></td>
+                <td>{{ form.age }}</td>
+                {% if form.age.errors %}
+                    <tr>
+                        <td colspan="2" style="color: red;">{{ form.age.errors }}</td>
+                    </tr>
+                {% endif %}
+            </tr>
+            <tr>
+                <td><label for="{{ form.residence.id_for_label }}">محل الإقامة:</label></td>
+                <td>{{ form.residence }}</td>
+                {% if form.residence.errors %}
+                    <tr>
+                        <td colspan="2" style="color: red;">{{ form.residence.errors }}</td>
+                    </tr>
+                {% endif %}
+            </tr>
+            <tr>
+                <td><label for="{{ form.phone_number.id_for_label }}">رقم الهاتف:</label></td>
+                <td>{{ form.phone_number }}</td>
+                {% if form.phone_number.errors %}
+                    <tr>
+                        <td colspan="2" style="color: red;">{{ form.phone_number.errors }}</td>
+                    </tr>
+                {% endif %}
+            </tr>
+            <tr>
+                <td><label for="{{ form.visit_date.id_for_label }}">تاريخ الزيارة:</label></td>
+                <td>{{ form.visit_date }}</td>
+                {% if form.visit_date.errors %}
+                    <tr>
+                        <td colspan="2" style="color: red;">{{ form.visit_date.errors }}</td>
+                    </tr>
+                {% endif %}
+            </tr>
+            <tr>
+                <td><label for="{{ form.specialist.id_for_label }}">الطبيب المختص:</label></td>
+                <td>{{ form.specialist }}</td>
+                {% if form.specialist.errors %}
+                    <tr>
+                        <td colspan="2" style="color: red;">{{ form.specialist.errors }}</td>
+                    </tr>
+                {% endif %}
+            </tr>
+            <tr>
+                <td><label for="{{ form.doctor_number.id_for_label }}">رقم الطبيب:</label></td>
+                <td>{{ form.doctor_number }}</td>
+                {% if form.doctor_number.errors %}
+                    <tr>
+                        <td colspan="2" style="color: red;">{{ form.doctor_number.errors }}</td>
+                    </tr>
+                {% endif %}
+            </tr>
+            <tr>
+                <td><label for="{{ form.medical_diagnosis.id_for_label }}">التشخيص الطبي:</label></td>
+                <td>{{ form.medical_diagnosis }}</td>
+                {% if form.medical_diagnosis.errors %}
+                    <tr>
+                        <td colspan="2" style="color: red;">{{ form.medical_diagnosis.errors }}</td>
+                    </tr>
+                {% endif %}
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <button type="submit">إضافة السجل</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <a href="{% url 'record_list' %}">عودة إلى قائمة السجلات</a>
+{% endblock %}

@@ -1,0 +1,32 @@
+<!-- records/templates/records/edit_profile.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تعديل المستخدم</title>
+    <link rel="stylesheet" href="{% static 'records/css/style1.css' %}">
+</head>
+<body>
+    <h1>تعديل بيانات المستخدم</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="phone_number">رقم الهاتف:</label>
+        <input type="text" name="phone_number" value="{{ profile.phone_number }}">
+        
+        <label for="address">العنوان:</label>
+        <textarea name="address">{{ profile.address }}</textarea>
+        
+        <label for="date_of_birth">تاريخ الميلاد:</label>
+        <input type="date" name="date_of_birth" value="{{ profile.date_of_birth }}">
+        
+        <label for="medical_history">التاريخ الطبي:</label>
+        <textarea name="medical_history">{{ profile.medical_history }}</textarea>
+        
+        <button type="submit">حفظ التعديلات</button>
+        <button type="submit" name="action" value="delete">حذف المستخدم</button>
+    </form>
+    <a href="{% url 'user_profile' %}">عودة إلى القائمة</a>
+</body>
+</html>

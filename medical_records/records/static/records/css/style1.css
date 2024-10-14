@@ -1,0 +1,91 @@
+* {
+    background-color: rgba(165, 42, 42, 0.499);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f29e2864;
+    color: #fefcfc;
+}
+
+h1 {
+    text-align: center;
+    color: #007BFF;
+}
+
+table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 90%;
+    background-color: #56e5698f;
+    box-shadow: 0 0 10px rgba(253, 252, 252, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th,
+td {
+    padding: 15px;
+    text-align: right;
+    border: 1px solid #ddd;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+th {
+    background-color: #007BFF;
+    color: white;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+    transform: scale(1.01);
+}
+
+a {
+    color: #007BFF;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.h1 {
+    text-align: center;
+    align-items: center;
+}
+
+.btn {
+    text-align: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+button:hover {
+    background-color: #c82333;
+    transform: scale(1.05);
+}
+
+.add-record {
+    display: block;
+    text-align: center;
+    margin: 20px;
+    font-size: 18px;
+    color: #28a745;
+    transition: color 0.3s;
+}
+
+.add-record:hover {
+    color: #218838;
+}

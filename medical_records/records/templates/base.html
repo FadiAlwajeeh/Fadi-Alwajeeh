@@ -1,0 +1,26 @@
+<!-- base.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}عنوان الصفحة{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'records/css/style1.css' %}">
+</head>
+<body>
+    <header>
+        <h1>قائمة السجلات الطبية</h1>
+    </header>
+
+    <main>
+        {% block content %}
+        <!-- المحتوى الخاص بالصفحة الفرعية سيظهر هنا -->
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p style="text-align: center;">جميع الحقوق محفوظة © 2024</p>
+    </footer>
+</body>
+</html>
