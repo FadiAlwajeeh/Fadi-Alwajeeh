@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول</title>
+    <!-- رابط Bootstrap محلي -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        .form-container {
+            max-width: 400px;
+            margin: 100px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .forgot-password {
+            display: block;
+            margin: 10px 0;
+            text-align: end;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-container">
+        <h2>تسجيل الدخول</h2>
+        <form id="login-form">
+            <div class="mb-3">
+                <label for="login-username" class="form-label">اسم المستخدم</label>
+                <input type="text" id="login-username" class="form-control" placeholder="أدخل اسم المستخدم" required>
+            </div>
+            <div class="mb-3">
+                <label for="login-password" class="form-label">كلمة المرور</label>
+                <input type="password" id="login-password" class="form-control" placeholder="أدخل كلمة المرور" required>
+            </div>
+            <a href="#" class="forgot-password">نسيت كلمة المرور؟</a>
+            <button type="submit" class="btn btn-primary w-100">دخول</button>
+        </form>
+    </div>
+    <!-- رابط Bootstrap محلي -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = document.getElementById('login-username').value;
+            const password = document.getElementById('login-password').value;
+
+            if (username && password) {
+                alert('تم تسجيل الدخول بنجاح!');
+            } else {
+                alert('يرجى إدخال اسم المستخدم وكلمة المرور.');
+            }
+        });
+    </script>
+</body>
+
+</html>

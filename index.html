@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+    <link rel="stylesheet " href='css/bootstrap.css'>
+    <link rel="stylesheet " href='css/bootstrap.min.css'>
+    <title>Carousel Example</title>
+</head>
+
+<body>
+
+    <div id="slide" class="carousel slide container w-50" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#slide" data-slide-to="0" class="active"></li>
+            <li data-target="#slide" data-slide-to="1"></li>
+            <li data-target="#slide" data-slide-to="2"></li>
+            <li data-target="#slide" data-slide-to="3"></li>
+            <li data-target="#slide" data-slide-to="4"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="img/1.jpg" alt="Slide 1" class="w-100">
+            </div>
+            <div class="carousel-item">
+                <img src="img/2.jpg" alt="Slide 2" class="w-100">
+            </div>
+            <div class="carousel-item">
+                <img src="img/3.jpg" alt="Slide 3" class="w-100">
+            </div>
+            <div class="carousel-item">
+                <img src="img/4.jpg" alt="Slide 4" class="w-100">
+            </div>
+            <div class="carousel-item">
+                <img src="img/5.jpg" alt="Slide 5" class="w-100">
+            </div>
+        </div>
+
+        <a href="#slide" class="carousel-control-prev" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a href="#slide" class="carousel-control-next" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+
+    <div class="container row justify-content-center">
+        <section id="properties" class="py-5 bg-light">
+            <div class="container">
+                <h2 class="text-center mb-4">العقارات المميزة</h2>
+                <div class="row">
+                    <!-- <div class="col-md-4">
+                        <div class="card property-card">
+                            <img src="img/1.jpg" class="card-img-top" alt="عقار 1">
+                            <div class="card-body">
+                                <h5 class="card-title">فيلا فاخرة</h5>
+                                <p class="card-text">فيلا بمساحة 300 متر مربع مع حديقة.</p>
+                                <a href="#x" class="btn btn-primary" data-toggle="collapse">تفاصيل أكثر</a>
+                                <h6 id="x" class="collapse"> jhwdihdnd jdhjoijoiwdij hdihjidjdij ihiwdhidi ihjiwdij
+                                </h6>
+    
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="col-md-4 col-10">
+                        <div class="card property-card">
+                            <a href="login.html"><img src="img/1.jpg" class="card-img-top" alt="عقار 1"></a>
+                            <div class="card-body">
+                                <h5 class="card-title">فيلا فاخرة</h5>
+                                <p class="card-text">فيلا بمساحة 300 متر مربع مع حديقة.</p>
+                                <!-- زر عرض التفاصيل -->
+                                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#details1" aria-expanded="false" aria-controls="details1">
+                                    تفاصيل أكثر
+                                </button>
+                                <!-- التفاصيل المخفية -->
+                                <div id="details1" class="collapse mt-3">
+                                    <p><strong>السعر:</strong> 500,000 دولار</p>
+                                    <p><strong>وصف:</strong> فيلا فاخرة بمساحة 300 متر مربع، تشمل حديقة خاصة ومناظر خلابة.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-4">
+                        <div class="card property-card">
+                            <img src="img/2.jpg" class="card-img-top" alt="عقار 2">
+                            <div class="card-body">
+                                <h5 class="card-title">شقة حديثة</h5>
+                                <p class="card-text">شقة بموقع استراتيجي وسط المدينة.</p>
+                                <a href="#" class="btn btn-primary">تفاصيل أكثر</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card property-card">
+                            <img src="img/3.jpg" class="card-img-top" alt="عقار 3">
+                            <div class="card-body">
+                                <h5 class="card-title">منزل ريفي</h5>
+                                <p class="card-text">منزل مريح مع إطلالة رائعة.</p>
+                                <a href="#" class="btn btn-primary">تفاصيل أكثر</a>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="col-md-4 col-10">
+                        <div class="card property-card">
+                            <img src="img/2.jpg" class="card-img-top" alt="عقار 1">
+                            <div class="card-body">
+                                <h5 class="card-title">منزل فاخر</h5>
+                                <p class="card-text">منزل بمساحة 300 متر مربع مع حديقة.</p>
+                                <!-- زر عرض التفاصيل -->
+                                <button class="btn btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#details1" aria-expanded="false" aria-controls="details1">
+                                    تفاصيل أكثر
+                                </button>
+                                <!-- التفاصيل المخفية -->
+                                <div id="details1" class="collapse mt-3">
+                                    <p><strong>السعر:</strong> 700,000 دولار</p>
+                                    <p><strong>وصف:</strong> منزل فاخر بمساحة 300 متر مربع، يشمل حديقة خاصة ومناظر خلابة.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-10">
+                        <div class="card property-card">
+                            <img src="img/4.jpg" class="card-img-top" alt="عقار 1">
+                            <div class="card-body">
+                                <h5 class="card-title">شقة فاخرة</h5>
+                                <p class="card-text">شقة بمساحة 100 متر مربع .</p>
+                                <!-- زر عرض التفاصيل -->
+                                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#details2" aria-expanded="false" aria-controls="details2">
+                                    تفاصيل أكثر
+                                </button>
+                                <!-- التفاصيل المخفية -->
+                                <div id="details2" class="collapse mt-3">
+                                    <p><strong>السعر:</strong> 250,000 دولار</p>
+                                    <p><strong>وصف:</strong> شقة فاخرة بمساحة 100 متر مربع، تطل على مناظر خلابة.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-10">
+                        <div class="card property-card">
+                            <img src="img/1.jpg" class="card-img-top" alt="عقار 1">
+                            <div class="card-body">
+                                <h5 class="card-title">فيلا فاخرة</h5>
+                                <p class="card-text">فيلا بمساحة 300 متر مربع مع حديقة.</p>
+                                <!-- زر عرض التفاصيل -->
+                                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#details1" aria-expanded="false" aria-controls="details1">
+                                    تفاصيل أكثر
+                                </button>
+                                <!-- التفاصيل المخفية -->
+                                <div id="details1" class="collapse mt-3">
+                                    <p><strong>السعر:</strong> 500,000 دولار</p>
+                                    <p><strong>وصف:</strong> فيلا فاخرة بمساحة 300 متر مربع، تشمل حديقة خاصة ومناظر خلابة.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-10">
+                        <div class="card property-card">
+                            <img src="img/1.jpg" class="card-img-top" alt="عقار 1">
+                            <div class="card-body">
+                                <h5 class="card-title">فيلا فاخرة</h5>
+                                <p class="card-text">فيلا بمساحة 300 متر مربع مع حديقة.</p>
+                                <!-- زر عرض التفاصيل -->
+                                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#details1" aria-expanded="false" aria-controls="details1">
+                                    تفاصيل أكثر
+                                </button>
+                                <!-- التفاصيل المخفية -->
+                                <div id="details1" class="collapse mt-3">
+                                    <p><strong>السعر:</strong> 500,000 دولار</p>
+                                    <p><strong>وصف:</strong> فيلا فاخرة بمساحة 300 متر مربع، تشمل حديقة خاصة ومناظر خلابة.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-10">
+                        <div class="card property-card">
+                            <img src="img/1.jpg" class="card-img-top" alt="عقار 1">
+                            <div class="card-body">
+                                <h5 class="card-title">فيلا فاخرة</h5>
+                                <p class="card-text">فيلا بمساحة 300 متر مربع مع حديقة.</p>
+                                <!-- زر عرض التفاصيل -->
+                                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#details1" aria-expanded="false" aria-controls="details1">
+                                    تفاصيل أكثر
+                                </button>
+                                <!-- التفاصيل المخفية -->
+                                <div id="details1" class="collapse mt-3">
+                                    <p><strong>السعر:</strong> 500,000 دولار</p>
+                                    <p><strong>وصف:</strong> فيلا فاخرة بمساحة 300 متر مربع، تشمل حديقة خاصة ومناظر خلابة.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

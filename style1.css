@@ -1,0 +1,92 @@
+body {
+    font-family: 'Cairo', sans-serif;
+    background-color: #f8f9fa;
+}
+
+.navbar {
+    background-color: #007bff;
+}
+
+.navbar-brand,
+.nav-link {
+    color: #410202 !important;
+}
+
+.hero {
+    background: url('real-estate-hero.jpg') no-repeat center center/cover;
+    height: 400px;
+    color: rgb(21, 1, 1);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.property-card img {
+    height: 200px;
+    object-fit: cover;
+    margin-top: 20px;
+}
+
+footer {
+    background-color: #343a40;
+    color: #fff;
+    padding: 20px 0;
+}
+
+#customCarousel {
+    overflow: hidden;
+}
+
+.carousel-content img {
+    max-width: 100%;
+    max-height: 70%;
+    object-fit: contain;
+}
+
+.carousel-content {
+    height: 100px;
+    /* تحديد الارتفاع الثابت */
+}
+
+
+/* تحديد الارتفاع الثابت */
+
+.image-container {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    height: 200px;
+}
+
+.image-container img {
+    width: 150px;
+    height: 150px;
+    margin: 5px;
+    border-radius: 8px;
+    object-fit: cover;
+    display: inline-block;
+}
+
+.modal-dialog {
+    max-width: 600px;
+}
+
+.modal-body img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+.modal-footer {
+    justify-content: center;
+}
+
+.modal-content img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
